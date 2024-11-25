@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 // Ruta: GymManagementSystem/Controllers/MainController.cs
 
-using GymManagmentSystem.Views;
+using GymManagmentSystem;
 
 namespace GymManagementSystem.Controllers
 {
@@ -14,8 +14,7 @@ namespace GymManagementSystem.Controllers
     {
         public void Start()
         {
-            var mainView = new MainView();
-            mainView.Show();
+           
         }
     }
 }

@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 // Ruta: GymManagementSystem/Models/Equipment.cs
 namespace GymManagementSystem.Models
 {
-    public class Equipment
+    public class Inventory
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime PurchaseDate { get; set; }
-        public int LifetimeMonths { get; set; }
+        public string Name { get; set; } // Non-nullable property
 
-        public bool IsNearEndOfLife()
+        public Inventory(int id, string name)
         {
-            return (PurchaseDate.AddMonths(LifetimeMonths) - DateTime.Now).TotalDays <= 90;
+            Id = id;
+            Name = name; // Se asegura que 'Name' tenga un valor al construir la clase
         }
+
     }
+
 }

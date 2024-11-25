@@ -39,11 +39,14 @@ namespace GymManagementSystem.Models
     public class Trainer : User
     {
         public string Specialty { get; set; }
+        public List<string> Schedule { get; set; }
 
-        public Trainer(int id, string name, string specialty)
+        public Trainer(int id, string name, string specialty, List<string> schedule)
             : base(id, name, "Trainer")
         {
             Specialty = specialty;
+            Schedule = schedule;
         }
     }
+
 }

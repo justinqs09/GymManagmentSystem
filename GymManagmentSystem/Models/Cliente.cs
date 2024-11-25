@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GymManagmentSystem.Services
+namespace GymManagmentSystem.Models
 {
-    internal class Program
+    internal class Cliente
     {
-
     }
 }

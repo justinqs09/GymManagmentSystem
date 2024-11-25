@@ -9,15 +9,32 @@ namespace GymManagementSystem.Models
 {
     public class Reservation
     {
-        public int ClassId { get; set; }
-        public int ClientId { get; set; }
-        public DateTime ReservationDate { get; set; }
-
-        public Reservation(int classId, int clientId, DateTime reservationDate)
+        public class Clase
         {
-            ClassId = classId;
-            ClientId = clientId;
-            ReservationDate = reservationDate;
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public DateTime Schedule { get; set; }
+            public int Capacity { get; set; }
+            public Trainer AssignedTrainer { get; set; }
+            public List<Client> Clients { get; set; }
+
+            public Clase(int id, string name, DateTime schedule, int capacity, Trainer assignedTrainer)
+            {
+                Id = id;
+                Name = name;
+                Schedule = schedule;
+                Capacity = capacity;
+                AssignedTrainer = assignedTrainer;
+                Clients = new List<Client>();
+            }
+
+            public bool AddClient(Client client)
+            {
+                if (Clients.Count >= Capacity) return false;
+                Clients.Add(client);
+                return true;
+            }
         }
+
     }
 }
